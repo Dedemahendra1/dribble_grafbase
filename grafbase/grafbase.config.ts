@@ -7,7 +7,8 @@ const User = g.model('User', {
   avatarUrl: g.url(),
   description: g.string().optional(),
   githubUrl: g.url().optional(),
-  linkedInUrl: g.url().optional(), 
+  linkedInUrl: g.url().optional(),
+  // @ts-ignore 
   projects: g.relation(() => Project).list().optional(),
 }).auth((rules)=> {rules.public().read()})
 
